@@ -8,18 +8,13 @@ using System.Threading.Tasks;
 
 namespace BookRazor.Pages
 {
-	public class IndexModel : PageModel
+using BookRazor.Interface;
+using BookRazor.Models;
+public class IndexModel : PageModel
 	{
-		private readonly ILogger<IndexModel> _logger;
-
-		public IndexModel(ILogger<IndexModel> logger)
-		{
-			_logger = logger;
-		}
-
-		public void OnGet()
-		{
-
-		}
+	private readonly IRepository _repository;
+	public HashSet<Book> Books => _repository.Books;
+	public int Count => _repository.Books.Count;
+	public IndexModel(IRepository repository) => _repository = repository;
 	}
 }
