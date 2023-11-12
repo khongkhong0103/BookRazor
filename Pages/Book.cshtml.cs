@@ -18,5 +18,16 @@ namespace BookRazor.Pages
             Book = _repository.Get(id);
             ViewData["Title"] = Book == null ? "Book not found !" : $"Detail - {Book.Title}";
         }
+        public void OnGetDelete(int id)
+        {
+            Job = Action.Delete;
+            Book = _repository.Get(id);
+            ViewData["Title"] = Book == null ? "Book not found" : $"Confim deleting: {Book.Title}";
+        }
+        public IActionResult OnGetConfirm(int id)
+        {
+            _repository.Delete(id);
+            return new RedirectToPageResult("index");
+        }
     }
 }

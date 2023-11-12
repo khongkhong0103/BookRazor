@@ -16,8 +16,13 @@ namespace BookRazor.Respository
 
 		};
 
-		public Book Get(int id) => Books.SingleOrDefault(b => b.Id == id);
-		
-			
-	}
+        public Book Get(int id) => Books.SingleOrDefault(b => b.Id == id);
+        public bool Delete(int id)
+        {
+			var book = Get(id);
+			return book != null ? Books.Remove(book) : false;
+        }
+
+
+    }
 }
