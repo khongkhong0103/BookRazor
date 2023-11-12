@@ -16,5 +16,6 @@ public class IndexModel : PageModel
 	public HashSet<Book> Books => _repository.Books;
 	public int Count => _repository.Books.Count;
 	public IndexModel(IRepository repository) => _repository = repository;
+	
 	}
 }

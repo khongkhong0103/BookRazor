@@ -16,14 +16,17 @@
             <a class="btn btn-info btn-block mb-2" href="/">Return</a>
             break;
         case BookModel.Action.Create:
+            await form();
             break;
         case BookModel.Action.Update:   
             break;
     }
 </div>
 @{
-    void template(bool readOnly = true, string errorMessage = "") {
-        if (Model.Book == null) {
+    void template(bool readOnly = true, string errorMessage = "")
+    {
+        if (Model.Book == null)
+        {
             <p class="h5 text-center text-danger mb-4">@errorMessage</p>
             return;
         }
@@ -38,4 +41,15 @@
         <label for="year" class="">Năm xuất bản</label>
         <input name="year" type="number" class="form-control mb-2" id="year" value="@Model.Book.Year" @(readOnly ? "readonly" : "") />
     }
+    async Task form(string handler = "create")
+        {
+            <form method="post" href="?handler=@handler">
+                @{template(false);}
+                <button type="submit" class="btn btn-primary btn-block mb-2">Save</button>
+                <button type="reset" class="btn btn-secondary btn-block mb-2">Reset</button>
+
+            </form>
+            <a class="btn btn-info btn-block mb-2" href="/">Return</a>
+        }
+    
 }
