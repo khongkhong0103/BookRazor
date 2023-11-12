@@ -1,0 +1,34 @@
+﻿@page "{id:int?}"
+@model BookRazor.Pages.BookModel
+<div style="margin: auto;" class="border border-light p-3 w-50 shadow">
+    @switch (Model.Job) {
+        case BookModel.Action.Detail:
+            template(readOnly: true, errorMessage: "Không tìm thấy cuốn sách bạn yêu cầu.");
+            <a class="btn btn-info btn-block mb-2" href="/">Return</a>
+            break;
+        case BookModel.Action.Delete:
+            break;
+        case BookModel.Action.Create:
+            break;
+        case BookModel.Action.Update:
+            break;
+    }
+</div>
+@{
+    void template(bool readOnly = true, string errorMessage = "") {
+        if (Model.Book == null) {
+            <p class="h5 text-center text-danger mb-4">@errorMessage</p>
+            return;
+        }
+        <input name="id" type="hidden" value="@Model.Book.Id" />
+        <p class="h4 text-center mb-4">@Model.Book.Title</p>
+        <label for="title" class="">Tiêu đề</label>
+        <input name="title" type="text" class="form-control mb-2" id="title" value="@Model.Book.Title" @(readOnly ? "readonly" : "") />
+        <label for="authors" class="">Tác giả</label>
+        <input name="authors" type="text" class="form-control mb-2" id="authors" value="@Model.Book.Authors" @(readOnly ? "readonly" : "") />
+        <label for="publisher" class="">Nhà xuất bản</label>
+        <input name="publisher" type="text" class="form-control mb-2" id="publisher" value="@Model.Book.Publisher" @(readOnly ? "readonly" : "") />
+        <label for="year" class="">Năm xuất bản</label>
+        <input name="year" type="number" class="form-control mb-2" id="year" value="@Model.Book.Year" @(readOnly ? "readonly" : "") />
+    }
+}

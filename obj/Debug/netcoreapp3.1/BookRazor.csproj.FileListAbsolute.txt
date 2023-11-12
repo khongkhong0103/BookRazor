@@ -38,3 +38,4 @@ D:\Source\Visual studio\.NET\TuhocICT\ASP.NET Core\BookRazor\obj\Debug\netcoreap
 D:\Source\Visual studio\.NET\TuhocICT\ASP.NET Core\BookRazor\obj\Debug\netcoreapp3.1\BookRazor.pdb
 D:\Source\Visual studio\.NET\TuhocICT\ASP.NET Core\BookRazor\obj\Debug\netcoreapp3.1\BookRazor.genruntimeconfig.cache
 D:\Source\Visual studio\.NET\TuhocICT\ASP.NET Core\BookRazor\obj\Debug\netcoreapp3.1\BookRazor.csproj.CopyComplete
+D:\Source\Visual studio\.NET\TuhocICT\ASP.NET Core\BookRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Book.cshtml.g.cs
