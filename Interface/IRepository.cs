@@ -10,5 +10,6 @@ namespace BookRazor.Interface
 		public bool Delete(int id);
 		public Book Create();
 		public bool Add(Book book);
+		public bool Update(Book book);
 	}
 }

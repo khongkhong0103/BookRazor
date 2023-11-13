@@ -18,7 +18,8 @@
         case BookModel.Action.Create:
             await form();
             break;
-        case BookModel.Action.Update:   
+        case BookModel.Action.Update:
+            await form(handler: "update");
             break;
     }
 </div>
